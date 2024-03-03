@@ -39,9 +39,6 @@
             label4 = new Label();
             dgvData = new DataGridView();
             btnCrear = new Button();
-            btnBuscar = new Button();
-            txtBuscar = new TextBox();
-            label5 = new Label();
             txtGenero = new TextBox();
             label = new Label();
             btnEliminar = new Button();
@@ -130,10 +127,10 @@
             // dgvData
             // 
             dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvData.Location = new Point(42, 393);
+            dgvData.Location = new Point(42, 324);
             dgvData.Name = "dgvData";
             dgvData.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dgvData.Size = new Size(600, 181);
+            dgvData.Size = new Size(656, 181);
             dgvData.TabIndex = 9;
             dgvData.CellContentClick += dgvData_CellContentClick;
             // 
@@ -146,31 +143,6 @@
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
             btnCrear.Click += btnCrear_Click;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(287, 321);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(98, 28);
-            btnBuscar.TabIndex = 11;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(111, 322);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(143, 23);
-            txtBuscar.TabIndex = 12;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(42, 328);
-            label5.Name = "label5";
-            label5.Size = new Size(42, 15);
-            label5.TabIndex = 13;
-            label5.Text = "Buscar";
             // 
             // txtGenero
             // 
@@ -237,9 +209,6 @@
             Controls.Add(btnEliminar);
             Controls.Add(txtGenero);
             Controls.Add(label);
-            Controls.Add(label5);
-            Controls.Add(txtBuscar);
-            Controls.Add(btnBuscar);
             Controls.Add(btnCrear);
             Controls.Add(dgvData);
             Controls.Add(label4);
@@ -272,9 +241,6 @@
         private Label label4;
         private DataGridView dgvData;
         private Button btnCrear;
-        private Button btnBuscar;
-        private TextBox txtBuscar;
-        private Label label5;
         private TextBox txtGenero;
         private Label label;
         private Button btnEliminar;

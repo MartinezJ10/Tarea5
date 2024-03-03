@@ -35,7 +35,8 @@
             txtUsuario = new TextBox();
             txtContrasenia = new TextBox();
             linkLabel1 = new LinkLabel();
-            //SuspendLayout();
+            btnCrearTablauUsuarios = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
@@ -97,12 +98,24 @@
             linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Crear Cuenta";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // Login
+            // btnCrearTablauUsuarios
+            // 
+            btnCrearTablauUsuarios.Location = new Point(450, 142);
+            btnCrearTablauUsuarios.Name = "btnCrearTablauUsuarios";
+            btnCrearTablauUsuarios.Size = new Size(205, 23);
+            btnCrearTablauUsuarios.TabIndex = 7;
+            btnCrearTablauUsuarios.Text = "CREAR TABLA USUARIOS";
+            btnCrearTablauUsuarios.UseVisualStyleBackColor = true;
+            btnCrearTablauUsuarios.Click += btnCrearTablauUsuarios_Click;
+            // 
+            // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCrearTablauUsuarios);
             Controls.Add(linkLabel1);
             Controls.Add(txtContrasenia);
             Controls.Add(txtUsuario);
@@ -110,7 +123,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Login";
+            Name = "frmLogin";
             Text = "Form1";
             Load += Login_Load;
             ResumeLayout(false);
@@ -126,5 +139,6 @@
         private TextBox txtUsuario;
         private TextBox txtContrasenia;
         private LinkLabel linkLabel1;
+        private Button btnCrearTablauUsuarios;
     }
 }

@@ -31,19 +31,59 @@ namespace Tarea5
                     frmMain mainForm = new frmMain();
                     mainForm.Show();
                 }
-                
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
-            
-            
+
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
+   
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmCreateUser frmCreateUser = new frmCreateUser();
+            this.Hide();
+            frmCreateUser.Show();
+        }
+
+        private void btnCrearTablauUsuarios_Click(object sender, EventArgs e)
+        {
+            SQLManager SQLMng = new SQLManager();
+           /* try
+            {
+                string deleteTable = "TRUNCATE TABLE TipoUsuario;";
+
+                string deleteTable2 = "TRUNCATE TABLE Usuario;";
+                
+                SQLMng.operationQuery(deleteTable2);
+                SQLMng.operationQuery(deleteTable);
+
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(ex.Message);
+            }*/
+
+            try
+            {
+                string createTableTipo = "CREATE TABLE TipoUsuario(Id INTEGER IDENTITY(1,1) PRIMARY KEY,Tipo varchar(25));";
+                SQLMng.operationQuery(createTableTipo);
+                string createTableUsuario = "CREATE TABLE Usuarios(Id INTEGER IDENTITY(1,1) PRIMARY KEY,Nombre varchar(50),Contrasenia varchar(20), TipoUsuario INTEGER REFERENCES TipoUsuario(Id));";
+                SQLMng.operationQuery(createTableUsuario);
+                MessageBox.Show("TABLA CREADA EXITOSAMENTE");
+                btnCrearTablauUsuarios.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
     }
 }

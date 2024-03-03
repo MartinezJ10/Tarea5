@@ -40,28 +40,30 @@ namespace Tarea5
 
             try
             {
-                dgvData.DataSource = SQLMng.retrieveData(qrySelect);
+                if (SQLMng.retrieveData(qrySelect).Rows.Count != 0)
+                {
+                    dgvData.DataSource = SQLMng.retrieveData(qrySelect);           
+                }else dgvData.DataSource = null;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnCrearTabla_Click(object sender, EventArgs e)
         {
             SQLManager SQLMng = new SQLManager();
-            try
+            /*try
             {
-                string deleteTable = "DROP TABLE Peliculas;";
+                string deleteTable = "TRUNCATE TABLE Peliculas;";
                 SQLMng.operationQuery(deleteTable);
 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
-            }
+                Debug.WriteLine(ex.Message);
+            }*/
 
             try
             {
@@ -70,11 +72,11 @@ namespace Tarea5
                 MessageBox.Show("TABLA CREADA EXITOSAMENTE");
                 this.cargarDatosTabla(); //CARGAR LOS DATOS EN LA TABLA NUEVAMENTE PARA REFLEJAR EL NUEVO INGRESO
                 this.limpiarCampos();
-
+                btnCrearTabla.Enabled = false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
 
         }
@@ -103,7 +105,7 @@ namespace Tarea5
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
 
         }
@@ -152,7 +154,7 @@ namespace Tarea5
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                   // MessageBox.Show(ex.Message);
                 }
             }
 
