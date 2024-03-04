@@ -60,7 +60,16 @@ namespace Tarea5.Utilidades
 
         public String SqlConnectionString()
         {
-            return "Data Source=BALEADACRIMINAL;Initial Catalog=Tarea5;Encrypt=false;Integrated Security=true";
+            //Falta definir path del json
+            string path = Config.jsonPath;
+
+            StringConexionJSON StrConJson = new StringConexionJSON();
+            string databaseConnectionParameters = StrConJson.getParametersJsonFromFile(path);
+
+
+            return StrConJson.DeserializeJsonFile(databaseConnectionParameters);
+            // return "Data Source=DESKTOP-CJP8CBD;Initial Catalog=Tarea5;Encrypt=false;Integrated Security=true";
+
         }
     }
 }

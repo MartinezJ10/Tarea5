@@ -42,7 +42,7 @@ namespace Tarea5
 
         private void Login_Load(object sender, EventArgs e)
         {
-   
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -55,21 +55,25 @@ namespace Tarea5
         private void btnCrearTablauUsuarios_Click(object sender, EventArgs e)
         {
             SQLManager SQLMng = new SQLManager();
-           /* try
-            {
-                string deleteTable = "TRUNCATE TABLE TipoUsuario;";
+            /* try
+             {
+                 string deleteTable = "TRUNCATE TABLE TipoUsuario;";
 
-                string deleteTable2 = "TRUNCATE TABLE Usuario;";
-                
-                SQLMng.operationQuery(deleteTable2);
-                SQLMng.operationQuery(deleteTable);
+                 string deleteTable2 = "TRUNCATE TABLE Usuario;";
 
-            }
-            catch (Exception ex)
-            {
+                 SQLMng.operationQuery(deleteTable2);
+                 SQLMng.operationQuery(deleteTable);
 
-                Debug.WriteLine(ex.Message);
-            }*/
+             }
+             catch (Exception ex)
+             {
+
+                 Debug.WriteLine(ex.Message);
+             }*/
+
+
+
+
 
             try
             {
@@ -83,6 +87,15 @@ namespace Tarea5
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Config.jsonPath = openFileDialog1.FileName;
+                lbAbrir.Text = openFileDialog1.FileName;
             }
         }
     }

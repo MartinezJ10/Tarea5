@@ -1,0 +1,6 @@
+{
+    "dataSource" : "BALEADACRIMINAL",
+    "initialCatalog" : "Tarea5",
+    "encrypt" : false,
+    "integratedSecurity" : true
+}
